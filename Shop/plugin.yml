@@ -1,0 +1,10 @@
+name: ChestShop
+main: com.chickenstyle.shop.Main
+description: New was to add shop!
+api-version: 1.15
+version: 1.0
+author: ChickenStyle
+commands:
+  signshop:
+    aliases: [ss]
+    description: Signshop's command!
