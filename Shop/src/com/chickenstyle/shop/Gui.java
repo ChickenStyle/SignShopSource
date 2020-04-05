@@ -96,13 +96,15 @@ public class Gui {
 			ItemMeta meta = newitem.getItemMeta();
 			int value = (int) BlockValue.getBuyPrice(newitem.getType());
 	        if (newitem != null && newitem.getType() != Material.AIR) {
-				meta.setDisplayName(ChatColor.GOLD + getFriendlyName(newitem.getType()));
+				meta.setDisplayName(ChatColor.YELLOW + getFriendlyName(newitem.getType()) + ":");
 	        }
 		    ArrayList<String> lore = new ArrayList<>();
-			lore.add(ChatColor.AQUA + "Buy 1 unit for: " + value + "$");
-			lore.add(ChatColor.AQUA + "Sell 1 unit for: " + (int) BlockValue.getSellPrice(newitem.getType()) + "$");
-			lore.add(ChatColor.GREEN + "Click left to buy!");
-			lore.add(ChatColor.RED + "Click right to sell!");
+		    lore.add(ChatColor.GRAY + "");
+			lore.add(ChatColor.WHITE + "Purchase for: " + ChatColor.GREEN +  + value +"©");
+			lore.add(ChatColor.WHITE + "Sell for: " + ChatColor.RED + (int) BlockValue.getSellPrice(newitem.getType()) + "©");
+		    lore.add(ChatColor.GRAY + "");
+			lore.add(ChatColor.WHITE + "Left click to " + ChatColor.YELLOW + "" + ChatColor.BOLD +"Purchase" + ChatColor.WHITE+ "!");
+			lore.add(ChatColor.WHITE + "Right click to " + ChatColor.YELLOW + "" + ChatColor.BOLD +"Sell" + ChatColor.WHITE + "!");
 			meta.setLore(lore);
 			newitem.setItemMeta(meta);
 			
@@ -126,7 +128,7 @@ public class Gui {
 		//Back Button
 		ItemStack back = new ItemStack(Material.ARROW);
 		ItemMeta meta = back.getItemMeta();
-		meta.setDisplayName(ChatColor.GRAY + "Go Back");
+		meta.setDisplayName(ChatColor.WHITE + "Go Back");
 		back.setItemMeta(meta);
 		
 		//Buy Amount
@@ -140,51 +142,32 @@ public class Gui {
 			if  (i == 22) {
 				ItemStack newitem = new ItemStack(mat);
 				ItemMeta newmeta = newitem.getItemMeta();
-				int value = (int) BlockValue.getBuyPrice(mat);
 		        if (newitem != null && newitem.getType() != Material.AIR) {
-					newmeta.setDisplayName(ChatColor.GOLD + getFriendlyName(newitem.getType()));
+					newmeta.setDisplayName(ChatColor.YELLOW + getFriendlyName(newitem.getType()));
+					newitem.setItemMeta(newmeta);
 		        }
-			    ArrayList<String> lore = new ArrayList<>();
-				lore.add(ChatColor.AQUA + "Buy 1 unit for: " + value + "$");
-				newmeta.setLore(lore);
-				newitem.setItemMeta(newmeta);
 				gui.setItem(22, newitem);
 		        
 			} else if (i == 40) {
 				gui.setItem(40, back);
 			} else if (i == 29) {
-	        	buymeta.setDisplayName(ChatColor.GREEN + "Buy 1");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Buy 1 unit for: " + ChatColor.GOLD + (int) BlockValue.getBuyPrice(mat) + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Purchase 1: " + ChatColor.GREEN + (int) BlockValue.getBuyPrice(mat) + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(29, buy);
 	        } else if (i == 30) {
-	        	buymeta.setDisplayName(ChatColor.GREEN + "Buy 4");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Buy 4 units for: " + ChatColor.GOLD + (int) BlockValue.getBuyPrice(mat) * 4 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Purchase 4: " + ChatColor.GREEN + (int) BlockValue.getBuyPrice(mat) * 4 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(30, buy);
 	        } else if (i == 31) {
-	        	buymeta.setDisplayName(ChatColor.GREEN + "Buy 16");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Buy 16 units for: " + ChatColor.GOLD + (int) BlockValue.getBuyPrice(mat) * 16 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Purchase 16: " + ChatColor.GREEN + (int) BlockValue.getBuyPrice(mat) * 16 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(31, buy);
 	        } else if (i == 32) {
-	        	buymeta.setDisplayName(ChatColor.GREEN + "Buy 32");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Buy 32 units for: " + ChatColor.GOLD + (int) BlockValue.getBuyPrice(mat) * 32 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Purchase 32: " + ChatColor.GREEN + (int) BlockValue.getBuyPrice(mat) * 32 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(32, buy);
 	        } else if (i == 33) {
-	        	buymeta.setDisplayName(ChatColor.GREEN + "Buy 64");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Buy 64 units for: " + ChatColor.GOLD + (int) BlockValue.getBuyPrice(mat) * 64 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Purchase 64: " + ChatColor.GREEN + (int) BlockValue.getBuyPrice(mat) * 64 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(33, buy);
 	        } else {
@@ -207,7 +190,7 @@ public class Gui {
 		//Back Button
 		ItemStack back = new ItemStack(Material.ARROW);
 		ItemMeta meta = back.getItemMeta();
-		meta.setDisplayName(ChatColor.GRAY + "Go Back");
+		meta.setDisplayName(ChatColor.WHITE + "Go Back");
 		back.setItemMeta(meta);
 		
 		//Sell Amount
@@ -221,56 +204,34 @@ public class Gui {
 			if  (i == 22) {
 				ItemStack newitem = new ItemStack(mat);
 				ItemMeta newmeta = newitem.getItemMeta();
-				int value = (int) BlockValue.getSellPrice(mat);
 		        if (newitem != null && newitem.getType() != Material.AIR) {
-					newmeta.setDisplayName(ChatColor.GOLD + getFriendlyName(newitem.getType()));
+					newmeta.setDisplayName(ChatColor.YELLOW + getFriendlyName(newitem.getType()));
+					newitem.setItemMeta(newmeta);
 		        }
-			    ArrayList<String> lore = new ArrayList<>();
-				lore.add(ChatColor.AQUA + "Sell 1 unit for: " + value + "$");
-				newmeta.setLore(lore);
-				newitem.setItemMeta(newmeta);
 				gui.setItem(22, newitem);
 		        
 			} else if (i == 40) {
 				gui.setItem(40, back);
 			} else if (i == 29) {
-				
-	        	buymeta.setDisplayName(ChatColor.RED + "Sell 1");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Sell 1 unit for: " + ChatColor.GOLD + (int) BlockValue.getSellPrice(mat) + "$");
-	        	buymeta.setLore(lore);
+				buymeta.setDisplayName(ChatColor.WHITE + "Sell 1: " + ChatColor.RED + (int) BlockValue.getSellPrice(mat) + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(29, buy);
 	        	
 	        } else if (i == 30) {
-	        	
-	        	buymeta.setDisplayName(ChatColor.RED + "Sell 16");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Sell 16 units for: " + ChatColor.GOLD + (int)BlockValue.getSellPrice(mat) * 16 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Sell 16: " + ChatColor.RED + (int)BlockValue.getSellPrice(mat) * 16 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(30, buy);
 	        } else if (i == 31) {
-	        	
-	        	buymeta.setDisplayName(ChatColor.RED + "Sell 32");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Sell 32 units for: " + ChatColor.GOLD +(int) BlockValue.getSellPrice(mat) * 32 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Sell 32: " + ChatColor.RED +(int) BlockValue.getSellPrice(mat) * 32 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(31, buy);
 	        	
 	        } else if (i == 32) {
-	        	
-	        	buymeta.setDisplayName(ChatColor.RED + "Sell 64");
-	        	ArrayList<String> lore = new ArrayList<>();
-	        	lore.add(ChatColor.AQUA + "Sell 64 units for: " + ChatColor.GOLD +(int) BlockValue.getSellPrice(mat) * 64 + "$");
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Sell 64: " + ChatColor.RED +(int) BlockValue.getSellPrice(mat) * 64 + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(32, buy);
 	        	
 	        } else if (i == 33) {
-	        	buymeta.setDisplayName(ChatColor.RED + "Sell All");
-	        	ArrayList<String> lore = new ArrayList<>();
 				int totalamount = 0;
 				
 				// Count The Amount Of Items
@@ -281,12 +242,7 @@ public class Gui {
 						}
 					}
 				}
-	        	if (totalamount == 0) {
-	        		lore.add(ChatColor.RED + "You have dont items to sell!");
-	        	} else {
-	        		lore.add(ChatColor.AQUA + "Sell All units for: " + ChatColor.GOLD +(int) BlockValue.getSellPrice(mat) * totalamount + "$");
-	        	}
-	        	buymeta.setLore(lore);
+	        	buymeta.setDisplayName(ChatColor.WHITE + "Sell all: " + ChatColor.RED +(int) BlockValue.getSellPrice(mat) * totalamount + "©");
 	        	buy.setItemMeta(buymeta);
 	        	gui.setItem(33, buy);
 	        } else {

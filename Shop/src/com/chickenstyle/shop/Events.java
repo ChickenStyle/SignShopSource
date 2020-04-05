@@ -129,60 +129,60 @@ public class Events implements Listener {
 					if (money >= BlockValue.getBuyPrice(item.getType())) {
 						money = money - buyprice;
 						Economy.setMoney(player.getName(), money);
-						player.sendMessage(ChatColor.GREEN + "You successfully bought 1 " + getFriendlyName(item.getType()) + "!");
-						player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+						player.sendMessage(ChatColor.WHITE + "Items purchased successfully!");
+						player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						ItemStack buyitem = new ItemStack(item.getType(),1);
 						player.getInventory().addItem(buyitem);
 					} else {
-						player.sendMessage(ChatColor.RED + "You dont have enough money to buy this!");
+						player.sendMessage(ChatColor.WHITE + "You don't have enough money!");
 					}
 				}
 				if (slot == 30) {
 					if (money >= buyprice * 4) {
 						money = money - buyprice * 4;
 						Economy.setMoney(player.getName(), money);
-						player.sendMessage(ChatColor.GREEN + "You successfully bought 4 " + getFriendlyName(item.getType()) + "!");
-						player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+						player.sendMessage(ChatColor.WHITE + "Items purchased successfully!");
+						player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						ItemStack buyitem = new ItemStack(item.getType(),4);
 						player.getInventory().addItem(buyitem);
 					} else {
-						player.sendMessage(ChatColor.RED + "You dont have enough money to buy this!");
+						player.sendMessage(ChatColor.WHITE + "You don't have enough money!");
 					}
 				}
 				if (slot == 31) {
 					if (money >= buyprice * 16) {
 						money = money - buyprice * 16;
 						Economy.setMoney(player.getName(), money);
-						player.sendMessage(ChatColor.GREEN + "You successfully bought 16 " + getFriendlyName(item.getType()) + "!");
-						player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+						player.sendMessage(ChatColor.WHITE + "Items purchased successfully!");
+						player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						ItemStack buyitem = new ItemStack(item.getType(),16);
 						player.getInventory().addItem(buyitem);
 					} else {
-						player.sendMessage(ChatColor.RED + "You dont have enough money to buy this!");
+						player.sendMessage(ChatColor.WHITE + "You don't have enough money!");
 					}
 				}
 				if (slot == 32) {
 					if (money >= buyprice * 32) {
 						money = money - buyprice * 32;
 						Economy.setMoney(player.getName(), money);
-						player.sendMessage(ChatColor.GREEN + "You successfully bought 32 " + getFriendlyName(item.getType()) + "!");
-						player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+						player.sendMessage(ChatColor.WHITE + "Items purchased successfully!");
+						player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						ItemStack buyitem = new ItemStack(item.getType(),32);
 						player.getInventory().addItem(buyitem);
 					} else {
-						player.sendMessage(ChatColor.RED + "You dont have enough money to buy this!");
+						player.sendMessage(ChatColor.WHITE + "You don't have enough money!");
 					}
 				}
 				if (slot == 33) {
 					if (money >= buyprice * 64) {
 						money = money - buyprice * 64;
 						Economy.setMoney(player.getName(), money);
-						player.sendMessage(ChatColor.GREEN + "You successfully bought 64 " + getFriendlyName(item.getType()) + "!");
-						player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+						player.sendMessage(ChatColor.WHITE + "Items purchased successfully!");
+						player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						ItemStack buyitem = new ItemStack(item.getType(),64);
 						player.getInventory().addItem(buyitem);
 					} else {
-						player.sendMessage(ChatColor.RED + "You dont have enough money to buy this!");
+						player.sendMessage(ChatColor.WHITE + "You don't have enough money!");
 					}
 				}
 				if (slot == 40) {
@@ -218,10 +218,10 @@ public class Events implements Listener {
 							removeItems(player.getInventory(), item.getType(), 1);
 							Economy.setMoney(player.getName(), money + sellprice * 1);
 							money = money + sellprice * 1;
-							player.sendMessage(ChatColor.GREEN + "You successfully sold 1 " + item.getType() + "!");
-							player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+							player.sendMessage(ChatColor.WHITE + "Items sold successfully!");
+							player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						} else {
-							player.sendMessage(ChatColor.RED + "You dont have enought items to sell!");
+							player.sendMessage(ChatColor.WHITE + "You don't have enough items to sell!");
 						}
 					}
 					if (slot == 30) {
@@ -229,10 +229,10 @@ public class Events implements Listener {
 							removeItems(player.getInventory(), item.getType(), 16);
 							Economy.setMoney(player.getName(), money + sellprice * 16);
 							money = money + sellprice * 16;
-							player.sendMessage(ChatColor.GREEN + "You successfully sold 16 " + item.getType() + "!");
-							player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+							player.sendMessage(ChatColor.WHITE + "Items sold successfully!");
+							player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						} else {
-							player.sendMessage(ChatColor.RED + "You dont have enought items to sell!");
+							player.sendMessage(ChatColor.WHITE + "You don't have enough items to sell!");
 						}
 					}
 					if (slot == 31) {
@@ -240,10 +240,10 @@ public class Events implements Listener {
 							removeItems(player.getInventory(), item.getType(), 32);
 							Economy.setMoney(player.getName(), money + sellprice * 32);
 							money = money + sellprice * 32;
-							player.sendMessage(ChatColor.GREEN + "You successfully sold 32 " + item.getType() + "!");
-							player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+							player.sendMessage(ChatColor.WHITE + "Items sold successfully!");
+							player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						} else {
-							player.sendMessage(ChatColor.RED + "You dont have enought items to sell!");
+							player.sendMessage(ChatColor.WHITE + "You don't have enough items to sell!");
 						}
 					}
 					if (slot == 32) {
@@ -251,10 +251,10 @@ public class Events implements Listener {
 							removeItems(player.getInventory(), item.getType(), 64);
 							Economy.setMoney(player.getName(), money + sellprice * 64);
 							money = money + sellprice * 64;
-							player.sendMessage(ChatColor.GREEN + "You successfully sold 64 " + item.getType() + "!");
-							player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+							player.sendMessage(ChatColor.WHITE + "Items sold successfully!");
+							player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						} else {
-							player.sendMessage(ChatColor.RED + "You dont have enought items to sell!");
+							player.sendMessage(ChatColor.WHITE + "You don't have enough items to sell!");
 						}
 					}
 					if (slot == 33) {
@@ -262,10 +262,10 @@ public class Events implements Listener {
 							removeItems(player.getInventory(), item.getType(), totalamount);
 							Economy.setMoney(player.getName(), money + sellprice * totalamount);
 							money = money + sellprice * totalamount;
-							player.sendMessage(ChatColor.GREEN + "You successfully sold " + totalamount + " " + item.getType() + "!");
-							player.sendMessage(ChatColor.GRAY + "Your balance is: " + ChatColor.GOLD + money + "$");
+							player.sendMessage(ChatColor.WHITE + "Items sold successfully!");
+							player.sendMessage(ChatColor.WHITE + "New balance: " + ChatColor.YELLOW + (int) money + "©");
 						} else {
-							player.sendMessage(ChatColor.RED + "You dont have enought items to sell!");
+							player.sendMessage(ChatColor.WHITE + "You don't have enough items to sell!");
 						}
 					}
 					if (slot == 40) {
